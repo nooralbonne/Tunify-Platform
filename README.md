@@ -4,14 +4,14 @@
 Tunify Platform is a web application that allows users to manage their music library, including subscriptions, playlists, and song collections. The application integrates with a SQL Server database to handle data storage and management, as outlined in the Entity-Relationship Diagram (ERD).
 
 ## Entity-Relationship Diagram
-![ERD Diagram](ERD-diagram.png)
+![ERD Diagram](https://github.com/nooralbonne/Tunify-Platform1/blob/master/Tunify.png)
 
 ## Models and Relationships
 
 - **User**: Represents a user of the platform.
   - **Id**: Unique identifier for the user.
-  - **Name**: User’s name.
-  - **Email**: User’s email address.
+  - **Name**: Userâ€™s name.
+  - **Email**: Userâ€™s email address.
 
 - **Subscription**: Represents a user's subscription.
   - **Id**: Unique identifier for the subscription.
@@ -32,7 +32,7 @@ Tunify Platform is a web application that allows users to manage their music lib
 
 - **Artist**: Represents a music artist.
   - **Id**: Unique identifier for the artist.
-  - **Name**: Artist’s name.
+  - **Name**: Artistâ€™s name.
 
 - **Album**: Represents a music album.
   - **Id**: Unique identifier for the album.
