@@ -8,6 +8,7 @@ namespace Tunify_Platform
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddControllers();
 
             string ConnectionServciesVar = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<TunifyDbContext>(optionX => optionX.UseSqlServer(ConnectionServciesVar));
@@ -15,6 +16,7 @@ namespace Tunify_Platform
             var app = builder.Build();
 
             app.MapGet("/", () => "Hello World!");
+            app.MapControllers();
 
             app.Run();
         }

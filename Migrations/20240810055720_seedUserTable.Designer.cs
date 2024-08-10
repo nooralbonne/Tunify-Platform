@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tunify_Platform.Data;
 
@@ -11,9 +12,11 @@ using Tunify_Platform.Data;
 namespace Tunify_Platform.Migrations
 {
     [DbContext(typeof(TunifyDbContext))]
-    partial class TunifyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240810055720_seedUserTable")]
+    partial class seedUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,20 +67,6 @@ namespace Tunify_Platform.Migrations
                     b.HasKey("ArtistId");
 
                     b.ToTable("Artists");
-
-                    b.HasData(
-                        new
-                        {
-                            ArtistId = 1,
-                            Bio = "Famous singer known for her powerful voice.",
-                            Name = "Alissa"
-                        },
-                        new
-                        {
-                            ArtistId = 2,
-                            Bio = "Popular artist with a long career in music.",
-                            Name = "Asala"
-                        });
                 });
 
             modelBuilder.Entity("Tunify_Platform.Models.Playlist", b =>
@@ -110,13 +99,6 @@ namespace Tunify_Platform.Migrations
                             CreatedDate = "2024",
                             PlaylistsName = "first song",
                             UsersId = 1
-                        },
-                        new
-                        {
-                            PlaylistsId = 2,
-                            CreatedDate = "2025",
-                            PlaylistsName = "Noor song",
-                            UsersId = 2
                         });
                 });
 
@@ -186,33 +168,6 @@ namespace Tunify_Platform.Migrations
                             Duration = 90,
                             Genre = 1,
                             Title = "Tunify"
-                        },
-                        new
-                        {
-                            SongsId = 2,
-                            AlbumsId = 2,
-                            ArtistsId = 2,
-                            Duration = 100,
-                            Genre = 2,
-                            Title = "Noor"
-                        },
-                        new
-                        {
-                            SongsId = 3,
-                            AlbumsId = 3,
-                            ArtistsId = 3,
-                            Duration = 200,
-                            Genre = 3,
-                            Title = "reem"
-                        },
-                        new
-                        {
-                            SongsId = 4,
-                            AlbumsId = 4,
-                            ArtistsId = 4,
-                            Duration = 50,
-                            Genre = 4,
-                            Title = "yasser"
                         });
                 });
 
@@ -276,14 +231,6 @@ namespace Tunify_Platform.Migrations
                             JoinDate = "2024",
                             SubscriptionId = 2,
                             UserName = "reem"
-                        },
-                        new
-                        {
-                            UsersId = 3,
-                            Email = "wasanablonne@gmail.com",
-                            JoinDate = "2024",
-                            SubscriptionId = 3,
-                            UserName = "wasan"
                         });
                 });
 

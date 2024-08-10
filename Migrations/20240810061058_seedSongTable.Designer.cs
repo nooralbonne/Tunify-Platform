@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tunify_Platform.Data;
 
@@ -11,9 +12,11 @@ using Tunify_Platform.Data;
 namespace Tunify_Platform.Migrations
 {
     [DbContext(typeof(TunifyDbContext))]
-    partial class TunifyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240810061058_seedSongTable")]
+    partial class seedSongTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,20 +67,6 @@ namespace Tunify_Platform.Migrations
                     b.HasKey("ArtistId");
 
                     b.ToTable("Artists");
-
-                    b.HasData(
-                        new
-                        {
-                            ArtistId = 1,
-                            Bio = "Famous singer known for her powerful voice.",
-                            Name = "Alissa"
-                        },
-                        new
-                        {
-                            ArtistId = 2,
-                            Bio = "Popular artist with a long career in music.",
-                            Name = "Asala"
-                        });
                 });
 
             modelBuilder.Entity("Tunify_Platform.Models.Playlist", b =>
