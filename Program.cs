@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Tunify_Platform.Data;
+using Tunify_Platform.Repositories.Interfaces;
+using Tunify_Platform.Repositories.Services;
 
 namespace Tunify_Platform
 {
@@ -12,6 +14,10 @@ namespace Tunify_Platform
 
             string ConnectionServciesVar = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<TunifyDbContext>(optionX => optionX.UseSqlServer(ConnectionServciesVar));
+
+
+            //builder.Services.AddTransient<IEmployee, EmployeeService>();
+            builder.Services.AddScoped<IUserRepository, UserService>();
 
             var app = builder.Build();
 
