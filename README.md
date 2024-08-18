@@ -46,10 +46,9 @@ Tunify Platform is a web application that allows users to manage their music lib
 ## Getting Started
 
 ### Clone the Repository
-```bash
-git clone https://github.com/your-username/Tunify-Platform.git
+git clone https://github.com/actual-username/Tunify-Platform.git
 cd Tunify-Platform
-```
+
 
 ## Repository Design Pattern
 
